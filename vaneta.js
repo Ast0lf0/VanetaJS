@@ -290,6 +290,15 @@ client.on("message", async message => {
       message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
     }
   }
+      if(command === "gay") {
+    let member = message.mentions.members.first();
+      if(!member)
+        return message.reply("Please mention a valid member of this server");
+    let embed = new Discord.RichEmbed()
+    .setColor(0xf442ce)
+    .setDescription(`${member} is **${Math.floor(Math.random() * 100) + 1}%** gay`)
+    message.channel.sendEmbed(embed)
+  }
     });
 
     client.login(config.token)
